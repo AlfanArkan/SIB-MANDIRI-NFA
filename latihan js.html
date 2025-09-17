@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan Menghitung Luas Bangun Datar</title>
+</head>
+<body>
+    <h2>Latihan Menghitung Luas Bangun Datar</h2>
+    <pre id="output"></pre>
+
+    <script>
+        // ==============================
+        // 1. Luas Persegi Panjang
+        // Rumus: panjang * lebar
+        // ==============================
+        let panjang = 10;  // nilai panjang
+        let lebar = 5;     // nilai lebar
+        let luasPersegiPanjang = panjang * lebar;
+
+        // ==============================
+        // 2. Luas Bujur Sangkar
+        // Rumus: sisi * sisi
+        // ==============================
+        let sisi = 6; // nilai sisi
+        let luasBujurSangkar = sisi * sisi;
+
+        // ==============================
+        // 3. Luas Segitiga
+        // Rumus: (alas * tinggi) / 2
+        // ==============================
+        let alas =  8;    // nilai alas
+        let tinggi =  4;  // nilai tinggi
+        let luasSegitiga = (alas * tinggi) / 2;
+
+        // ==============================
+        // Tampilan Hasil Di Layar
+        // ==============================
+        let hasil = "";
+        hasil += "Luas Persegi Panjang (panjang=" + panjang + ", lebar=" + lebar + ") = " + luasPersegiPanjang + "\n";
+        hasil += "Luas Bujur Sangkar (sisi=" + sisi + ") = " + luasBujurSangkar + "\n";
+        hasil += "Luas Segitiga (alas=" + alas + ", tinggi=" + tinggi + ") = " + luasSegitiga + "\n";
+
+        document.getElementById("output").innerText = hasil;
+    </script>
+</body>
+</html>
