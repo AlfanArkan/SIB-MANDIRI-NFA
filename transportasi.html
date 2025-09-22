@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistem Transportasi JS</title>
+</head>
+<body>
+  <h2>Hasil Programnya:</h2>
+  <pre id="output"></pre>
+
+  <script>
+    // Class Pelanggan //
+    class Pelanggan {
+      constructor(nama, nomorTelepon) {
+        this.nama = nama;
+        this.nomorTelepon = nomorTelepon;
+        this.kendaraanDisewa = null;
+      }
+      sewaKendaraan(kendaraan) {
+        this.kendaraanDisewa = kendaraan;
+        return `${this.nama} telah menyewa ${kendaraan}`;
+      }
+      getInfo() {
+        return `Nama: ${this.nama}, Telepon: ${this.nomorTelepon}, Kendaraan: ${this.kendaraanDisewa}`;
+      }
+    }
+    let daftarPelanggan = [];
+    function tambahPelanggan(nama, nomorTelepon) {
+      const pelangganBaru = new Pelanggan(nama, nomorTelepon);
+      daftarPelanggan.push(pelangganBaru);
+      return pelangganBaru;
+    }
+    function tampilkanDaftarPelanggan() {
+      let output = "Daftar Pelanggan yang Sedang Menyewa:\n";
+      daftarPelanggan.forEach((p, i) => {
+        if (p.kendaraanDisewa) {
+          output += `${i + 1}. ${p.getInfo()}\n`;
+        }
+      });
+      document.getElementById("output").innerText = output;
+    }
+    // Contoh penggunaan //
+    const Yadi = tambahPelanggan("Yadi", "08123458980");
+    const Yudi = tambahPelanggan("Yudi", "08987654111");
+
+    console.log(Yadi.sewaKendaraan("Mobil Kijang"));
+    console.log(Yudi.sewaKendaraan("Motor Beat"));
+
+    tampilkanDaftarPelanggan();
+  </script>
+</body>
+</html>
